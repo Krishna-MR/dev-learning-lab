@@ -1,5 +1,7 @@
 
-/* Basic reset */
+/* =========================
+   BASIC RESET
+========================= */
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +21,9 @@ a {
     color: inherit;
 }
 
-/* Navigation */
+/* =========================
+   NAVIGATION
+========================= */
 header {
     display: flex;
     justify-content: space-between;
@@ -45,7 +49,7 @@ nav {
 
 nav a {
     font-size: 14px;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
@@ -59,7 +63,8 @@ nav a:hover {
     color: white;
     padding: 12px 22px;
     border-radius: 30px;
-    transition: 0.3s;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
 }
 
 .book-btn:hover,
@@ -68,16 +73,20 @@ nav a:hover {
     transform: translateY(-3px);
 }
 
-/* Hero section */
+/* =========================
+   HERO SECTION
+========================= */
 .hero {
     min-height: 470px;
     display: flex;
     align-items: center;
     padding: 65px 10%;
     color: white;
+
     background:
         linear-gradient(90deg, #21150de8, #21150d45),
         url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1800&q=85");
+
     background-size: cover;
     background-position: center;
 }
@@ -118,7 +127,9 @@ h1 {
     font-size: 14px;
 }
 
-/* About section */
+/* =========================
+   ABOUT SECTION
+========================= */
 .about {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -144,7 +155,9 @@ h2 {
     color: #74675e;
 }
 
-/* Menu section */
+/* =========================
+   MENU SECTION
+========================= */
 .menu {
     text-align: center;
     padding: 75px 8%;
@@ -165,7 +178,8 @@ h2 {
     overflow: hidden;
     padding-bottom: 20px;
     box-shadow: 0 5px 20px #50341b0b;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -190,7 +204,9 @@ h2 {
     font-size: 14px;
 }
 
-/* Contact section */
+/* =========================
+   CONTACT SECTION
+========================= */
 .contact {
     text-align: center;
     padding: 80px 20px;
@@ -201,7 +217,9 @@ h2 {
     margin-bottom: 25px;
 }
 
-/* Footer */
+/* =========================
+   FOOTER
+========================= */
 footer {
     text-align: center;
     background-color: #35251d;
@@ -220,8 +238,63 @@ footer p:last-child {
     color: #d3bca6;
 }
 
-/* Mobile responsiveness */
+/* =========================
+   FLOATING WHATSAPP BUTTON
+========================= */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    background-color: #25D366;
+    color: white;
+
+    padding: 13px 20px;
+    border-radius: 50px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+    z-index: 100;
+
+    transition: background-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.whatsapp-icon {
+    font-size: 25px;
+    line-height: 1;
+}
+
+/* Keyboard accessibility */
+.whatsapp-btn:focus-visible,
+.primary-btn:focus-visible,
+.book-btn:focus-visible,
+nav a:focus-visible {
+    outline: 3px solid #edbd83;
+    outline-offset: 4px;
+}
+
+/* =========================
+   TABLET & MOBILE RESPONSIVENESS
+========================= */
 @media (max-width: 768px) {
+
+    /* Navigation */
     header {
         padding: 15px 5%;
         flex-wrap: wrap;
@@ -249,12 +322,14 @@ footer p:last-child {
         font-size: 12px;
     }
 
+    /* Hero */
     .hero {
         min-height: 420px;
         padding: 55px 7%;
         background-position: 60% center;
     }
 
+    /* About */
     .about {
         grid-template-columns: 1fr;
         padding: 55px 7%;
@@ -265,6 +340,7 @@ footer p:last-child {
         height: 260px;
     }
 
+    /* Menu */
     .menu {
         padding: 55px 7%;
     }
@@ -278,11 +354,68 @@ footer p:last-child {
         height: 240px;
     }
 
+    /* Headings */
     h2 {
         font-size: 30px;
     }
+
+    /* Contact */
+    .contact {
+        padding: 60px 7%;
+    }
+
+    /* WhatsApp */
+    .whatsapp-btn {
+        bottom: 18px;
+        right: 15px;
+        padding: 12px 16px;
+        font-size: 13px;
+    }
 }
 
+/* =========================
+   SMALL MOBILE SCREENS
+========================= */
+@media (max-width: 480px) {
 
+    .hero {
+        min-height: 400px;
+        padding: 45px 6%;
+    }
 
+    h1 {
+        font-size: 38px;
+    }
 
+    h2 {
+        font-size: 27px;
+    }
+
+    .about,
+    .menu {
+        padding: 45px 6%;
+    }
+
+    .about img {
+        height: 220px;
+    }
+
+    .card img {
+        height: 210px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .whatsapp-btn {
+        bottom: 15px;
+        right: 12px;
+        padding: 11px 15px;
+        font-size: 12px;
+    }
+}
